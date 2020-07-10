@@ -1,0 +1,52 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pularLinha() {
+        document.write("<br><br>");
+    }
+
+    function mostra(frase) {
+        document.write(frase);
+        pularLinha();
+    }
+
+    function calculaImc(altura, peso) {
+        return peso / (altura * altura);
+    }
+
+    
+    var nome = prompt("Informe seu nome:")
+    var alturaInformada = prompt(nome + " informe a sua altura:");
+    var pesoInformado = prompt(nome + " informe seu peso: ");
+
+    var imcCalculado = calculaImc(alturaInformada, pesoInformado);
+
+    mostra(nome + " seu IMC é " + Math.round(imcCalculado));
+
+
+    if (imcCalculado <= 18.5) {
+        mostra(nome + " você está abaixo do peso.");
+    }
+
+    if (imcCalculado >= 18.6 && imcCalculado <= 24.9) {
+        mostra(nome + " você está no seu peso ideal. Parabéns!")
+    }
+
+    if (imcCalculado >= 25 && imcCalculado <= 29.9) {
+        mostra(nome + " você está levemente acima do peso.")
+    }
+
+    if (imcCalculado >= 30 && imcCalculado <= 34.9) {
+        mostra(nome + ", cuidado! Você está com obesidade grau I.")
+    }
+
+    if (imcCalculado >= 35 && imcCalculado <= 39.9) {
+        mostra(nome + ", cuidado! Você está com obesidade grau II.")
+    }
+
+    if (imcCalculado >= 40) {
+        mostra(nome + " você está abaixo do peso.")
+    }
+
+</script>

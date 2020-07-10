@@ -1,0 +1,25 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pularLinha() {
+        document.write("<br><br>");
+    }
+
+    function mostra(frase) {
+        document.write(frase);
+        pularLinha();
+    }
+
+    var num = 2;
+
+    mostra("Os números pares de 1 até 100 são: ")
+
+    while(num <= 100){
+        mostra(num);
+        num = num + 2;
+    }
+
+    mostra("FIM");
+
+</script>

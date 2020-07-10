@@ -1,0 +1,20 @@
+<meta charset="utf-8">
+
+<script type="text/javascript">
+	
+	function pulaLinha() {
+		document.write("<br");
+	}
+
+	function mostrar(texto) {
+		document.write("O número de gerações desde 1500 são: " + texto + " gerações");
+		pulaLinha();
+	}
+
+	var anoAtual = 2020;
+	var mediaFilhos = 28;
+	var qtdeGeracoes = (anoAtual - 1500)/mediaFilhos;
+
+	mostrar( Math.round(qtdeGeracoes));
+
+</script>
