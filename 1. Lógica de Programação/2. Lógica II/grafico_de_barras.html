@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <canvas width="600" height="400"></canvas>
+
+    <script>
+
+        var tela = document.querySelector('canvas');
+        var pincel = tela.getContext('2d');
+        pincel.fillStyle = 'lightgray';
+        pincel.fillRect(0, 0, 600, 400);
+
+            pincel.font = '20px Georgia';
+            pincel.fillStyle = 'black';
+            pincel.fillText(2015, 50, 40);
+
+            //Barra 2015
+            pincel.fillStyle = 'blue';
+            pincel.fillRect(50, 50, 50, 50);
+            pincel.fillStyle = 'green';
+            pincel.fillRect(50, 100, 50, 25);
+            pincel.fillStyle = 'yellow';
+            pincel.fillRect(50, 125, 50, 20);
+            pincel.fillStyle = 'red';
+            pincel.fillRect(50, 145, 50, 5);
+
+            pincel.font = '20px Georgia';
+            pincel.fillStyle = 'black';
+            pincel.fillText(2016, 150, 40);
+
+            //Barra 2016
+            pincel.fillStyle = 'blue';
+            pincel.fillRect(150, 50, 50, 65);
+            pincel.fillStyle = 'green';
+            pincel.fillRect(150, 115, 50, 20);
+            pincel.fillStyle = 'yellow';
+            pincel.fillRect(150, 135, 50, 13);
+            pincel.fillStyle = 'red';
+            pincel.fillRect(150, 148, 50, 2);
+
+    </script>
+
+</body>
+</html>
