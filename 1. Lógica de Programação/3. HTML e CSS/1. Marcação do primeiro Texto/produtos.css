@@ -77,3 +77,15 @@ nav a:hover { /* Comportamento de quando o mouse está por cima do elemento */
     font-weight: bold;
     margin: 10px 0 0; /* ou utilizar a propriedade margin-top*/ 
 }
+
+footer {
+    text-align: center;
+    background: url('bg.jpg'); /* Inserindo uma imagem de fundo através do CSS */
+    padding: 40px 0;
+}
+
+.copyright {
+    color: #ffffff;
+    font-size: 13px;
+    margin: 20px 0 0;
+}

@@ -1,4 +1,36 @@
-body {
+header {
+    background: #bbbbbb;
+    padding: 20 px 0;
+}
+
+.caixa {
+    position: relative;
+    width: 940px;
+    margin: 0 auto;
+}
+
+nav {
+    position: absolute;
+    top: 110px;
+    right: 0;
+}
+
+nav li {
+    display: inline;
+    margin: 0 0 0 15px;
+}
+
+nav a {
+    text-transform: uppercase; /* Para deixar tudo maíusculo */
+    color: #000000;
+    font-weight: bold;
+    font-size: 22px;
+    text-decoration: none; /* Tira o sublinhado do link */
+}
+
+nav a:hover { /* Comportamento de quando o mouse está por cima do elemento */
+    color: #c78c19;
+    text-decoration: underline;
 }
 
 #banner {
@@ -27,7 +59,7 @@ p {
 }
 
 em strong {
-    color: red;
+    color: #ff0000;
 } 
 
 .itens {
@@ -36,7 +68,11 @@ em strong {
 
 .beneficios {
     background: #FFFFFF;
-    padding: 20%;
+    padding: 5%;
+}
+
+.beneficios h3 {
+    padding: 5%;
 }
 
 ul {
@@ -48,4 +84,16 @@ ul {
 
 .imgbeneficios {
     width: 50%;
+}
+
+footer {
+    text-align: center;
+    background: url('bg.jpg'); /* Inserindo uma imagem de fundo através do CSS */
+    padding: 40px 0;
+}
+
+.copyright {
+    color: #ffffff;
+    font-size: 13px;
+    margin: 20px 0 0;
 }
