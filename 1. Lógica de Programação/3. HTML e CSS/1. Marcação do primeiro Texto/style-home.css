@@ -33,49 +33,58 @@ nav a:hover { /* Comportamento de quando o mouse está por cima do elemento */
     text-decoration: underline;
 }
 
-.produtos {
-    width: 940px;
-    margin: 0 auto;
-    padding: 50px 0;
+#banner {
+    width: 100%;
 }
 
-.produtos li {
-    display: inline-block;
+.principal {
+    background: #cccccc;
+    padding: 30px;
+}
+
+.titulo-principal {
+    padding-left: 20px;
+}
+
+.titulo-centralizado {
     text-align: center;
-    width: 30%;
+}
+
+p {
+    text-align: center;
+}
+
+#missao {
+    style="font-size: 20px";
+}
+
+em strong {
+    color: #ff0000;
+} 
+
+.itens {
+    font-style: italic;
+}
+
+.beneficios {
+    background: #FFFFFF;
+    padding: 5%;
+    margin: 40px;
+}
+
+.beneficios h3 {
+    padding: 5%;
+}
+
+ul {
+    display: inline-block;
     vertical-align: top;
-    margin: 0 1.5%;
-    padding: 30px 20px;
-    box-sizing: border-box; /* propriedade que arruma o cálculo dos 20px (padding) aos 30% delimitado pelo width */
-    border: 2px solid #000000; /* !importante!*/
-    border-radius: 10px;
+    width: 20%;
+    margin-right: 15%;
 }
 
-.produtos li:hover {
-    border-color: #c78c19;
-}
-
-.produtos li:active {
-    border-color: #088c19;
-}
-
-.produtos li:hover h2 {
-    font-size: 34px;
-}
-
-.produtos h2 {
-    font-size: 30px;
-    font-weight: bold;
-}
-
-.produto-descricao {
-    font-size: 18px;
-}
-
-.produto-preco {
-    font-size: 22px;
-    font-weight: bold;
-    margin: 10px 0 0; /* ou utilizar a propriedade margin-top*/ 
+.imgbeneficios {
+    width: 50%;
 }
 
 footer {
