@@ -99,7 +99,7 @@ form {
     margin: 40px 0;
 }
 
-form label, form p {
+form label, form legend {
     display: block;
     font-size: 20px;
     margin: 0 0 10px;
@@ -114,4 +114,23 @@ form label, form p {
 
 .checkbox {
     margin: 20px 0;
+}
+
+.enviar {
+    width: 40%;
+    padding: 15px 0;
+    background: orange;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    transition: 1s all; /* transição entre as cores */
+    cursor: pointer; /* mudança do cursor para a 'mãozinha' */
+}
+
+.enviar:hover {
+    background: darkorange;
+    transform: scale(1.1); /* aumenta todos os elementos do objeto */
+    /*transform: rotate(70deg); realiza a rotação do objeto em graus (degrees)*/
 }
