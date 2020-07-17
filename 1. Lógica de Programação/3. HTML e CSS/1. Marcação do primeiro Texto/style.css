@@ -134,3 +134,18 @@ form label, form legend {
     transform: scale(1.1); /* aumenta todos os elementos do objeto */
     /*transform: rotate(70deg); realiza a rotação do objeto em graus (degrees)*/
 }
+
+table {
+    margin: 20px 0 40px;
+}
+
+thead { /* mudando a cor de fundo do cabeçalho */
+    background: #555555;
+    color: white;
+    font-weight: bold;
+}
+
+td, th { /* Criando bordas da tabela e espaçamento */
+    border: 1px solid #555555;
+    padding: 8px 15px;
+}
