@@ -149,3 +149,37 @@ td, th { /* Criando bordas da tabela e espaçamento */
     border: 1px solid #555555;
     padding: 8px 15px;
 }
+
+/* CSS da página Inicial */
+.banner {
+    width: 100%;
+}
+
+.titulo-principal {
+    text-align: center;
+    font-size: 2em; /* Medida proporcional ao pixel | o dobro do tamanho da fonte padrão */
+    margin: 0 0 1em; /* * Importante o espaçamento ser proporcional ao tamanho da fonte */
+    clear: left; /* Limpando a configuração do Float à esquerda */
+}
+
+.principal p {
+    margin: 0 0 1em;
+}
+
+.principal strong {
+    font-weight: bold;
+}
+
+.principal em {
+    font-style: italic;
+}
+
+.utensilios {
+    width: 150px;
+    float: left; /* * Float desloca a imagem e o seu sombreamento faz com que o texto se organize em volta dela | Afetando todo o comportamento da página */
+    margin: 0 20px 20px 0;
+}
+
+.imgbeneficios {
+    width: 60%;
+}
