@@ -9,17 +9,17 @@ botaoAdicionar.addEventListener('click', function (event) { // função que tira
 
     // > chamando a função com os dados do paciente do formulário
     var paciente = obtemPacienteDoFormulario(form); // esse objeto paciente obtém as propriedades do paciente do formulário
-    
+
+    // > chamando a função monta <tr> e <td>
+    var pacienteTr = montaTr(paciente);
+
     // > verificando a função de validação do paciente e mostrando no console se houver erro
     var erros = validaPaciente(paciente);
 
     if(erros.length > 0) {
-        exibeMendagensDeErro(erros);
+        exibeMensagensDeErro(erros);
         return;
     }
-
-    // > chamando a função monta <tr> e <td>
-    var pacienteTr = montaTr(paciente);
 
     // adicionando pacienteTr à '#tabela-pacientes'
     var tabela = document.querySelector('#tabela-pacientes');
@@ -30,20 +30,6 @@ botaoAdicionar.addEventListener('click', function (event) { // função que tira
     mensagensErro.innerHTML = '';
 
 });
-
-function exibeMensagensDeErro (erros) {
-    var ul = document.querySelector('#mensagens-erro');
-
-    // limpando as mensagens de erro ao inserir novas informações no formulárrio
-    ul.innerHTML = '';
-
-    // 'for' para cada objeto dentro da função erro criada
-    erros.forEach(function(erro) {
-        var li = document.createElement('li');
-        li.textContent = erro;
-        ul.appendChild(li);
-    });
-}
 
 function obtemPacienteDoFormulario(form) {
     
@@ -96,7 +82,7 @@ function validaPaciente(paciente) {
         erros.push('O nome não pode ser em branco');
     }
 
-    if (pacientes.gordura.length == 0) {
+    if (paciente.gordura.length == 0) {
         erros.push('O % de gordura não pode ser em branco');
     }
 
@@ -117,4 +103,18 @@ function validaPaciente(paciente) {
     }
 
     return erros;
+}
+
+function exibeMensagensDeErro (erros) {
+    var ul = document.querySelector('#mensagens-erro');
+
+    // limpando as mensagens de erro ao inserir novas informações no formulárrio
+    ul.innerHTML = '';
+
+    // 'for' para cada objeto dentro da função erro criada
+    erros.forEach(function(erro) {
+        var li = document.createElement('li');
+        li.textContent = erro;
+        ul.appendChild(li);
+    });
 }
