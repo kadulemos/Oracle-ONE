@@ -10,9 +10,6 @@ botaoAdicionar.addEventListener('click', function (event) { // função que tira
     // > chamando a função com os dados do paciente do formulário
     var paciente = obtemPacienteDoFormulario(form); // esse objeto paciente obtém as propriedades do paciente do formulário
 
-    // > chamando a função monta <tr> e <td>
-    var pacienteTr = montaTr(paciente);
-
     // > verificando a função de validação do paciente e mostrando no console se houver erro
     var erros = validaPaciente(paciente);
 
@@ -21,9 +18,8 @@ botaoAdicionar.addEventListener('click', function (event) { // função que tira
         return;
     }
 
-    // adicionando pacienteTr à '#tabela-pacientes'
-    var tabela = document.querySelector('#tabela-pacientes');
-    tabela.appendChild(pacienteTr);
+    adicionaPacienteNaTabela(paciente);
+    
     form.reset(); // limpa os campos do formulário após adicionar os dados de um paciente
 
     var mensagensErro = document.querySelector('#mensagens-erro');
@@ -117,4 +113,13 @@ function exibeMensagensDeErro (erros) {
         li.textContent = erro;
         ul.appendChild(li);
     });
+}
+
+// função que cria TR e a coloca dentro do FORM
+function adicionaPacienteNaTabela(paciente) {
+    // monta <tr> e <td>
+    var pacienteTr = montaTr(paciente);
+    // adicionando pacienteTr à '#tabela-pacientes'
+    var tabela = document.querySelector('#tabela-pacientes');
+    tabela.appendChild(pacienteTr);
 }
