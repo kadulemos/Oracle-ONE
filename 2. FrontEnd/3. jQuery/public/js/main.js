@@ -7,6 +7,7 @@ $(function(){
     atualizaTamanhoFrase();
     inicializaContadores();
     inicializaCronometro();
+    inicializaMarcadores();
     $('#botao-reiniciar').click(reiniciaJogo);
 });
 
@@ -44,13 +45,28 @@ function inicializaCronometro() {
                 campo.attr('disabled',true); // atributo disable -> | attr() -> atributo, pode pegar o valor e modificar | parâmetro true para HTML
                 clearInterval(cronometroID); // clearInterval -> recebe o id para informar quando deve parar de funcionar
                 $('#botao-reiniciar').attr('disabled', false); // habilita o botão reiniciar ao fim do jogo
+                campo.toggleClass('campo-desativado');
             }
         }, 1000);
     });
 }
 
+function inicializaMarcadores() {
+    var frase = $('.frase').text();
+    campo.on('input', function() {
+        var digitado = campo.val();
+        var comparavel = frase.substr(0, digitado.length); // sustr() -> pega pedaço do conteúdo
 
-$('#botao-reiniciar').click(reiniciaJogo); // .click() -> mesma função que o .on(click)
+        if(digitado == comparavel) {
+            campo.addClass('borda-verde');
+            campo.removeClass('borda-vermelha');
+        } else {
+            campo.addClass('borda-vermelha');
+            campo.removeClass('borda-verde');
+        }
+    });
+}
+
 function reiniciaJogo() {
     campo.attr('disabled', false);
     campo.val('');
@@ -60,4 +76,8 @@ function reiniciaJogo() {
     $('#tempo-digitacao').text(tempoInicial);
 
     inicializaCronometro();
+
+    campo.toggleClass('campo-desativado'); // habilita / desabilita
+    campo.removeClass('borda-vermelha');
+    campo.removeClass('borda-verde');
 }
