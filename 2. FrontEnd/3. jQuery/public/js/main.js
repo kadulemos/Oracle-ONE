@@ -1,9 +1,9 @@
-var campo = $('.campo-digitacao');
 // > Criando variável global de inicialização do tempo
 var tempoInicial = $('#tempo-digitacao').text();
+var campo = $('.campo-digitacao');
 
 // > função que inicializa todas as outras ao carregar a página
-$(function(){
+$(function() {
     atualizaTamanhoFrase();
     inicializaContadores();
     inicializaCronometro();
@@ -33,24 +33,6 @@ function inicializaContadores() {
     });
 }
 
-function inicializaCronometro() {
-    // > Contador de tempo
-    var tempoRestante = $('#tempo-digitacao').text();
-    campo.one('focus', function(){ // focus -> evento que detecta a entrada no campo para iniciar a digitação | one() -> igual a função on() mas só funciona uma única vez
-        $('#botao-reiniciar').attr('disabled', true); // desabilita o botão reiniciar ao começar a contar o tempo
-        var cronometroID = setInterval(function() { // setInterval -> evento que chama o que for declarado, a cada tempo estabelecido
-            tempoRestante--;
-            $('#tempo-digitacao').text(tempoRestante); 
-            if(tempoRestante < 1) {
-                campo.attr('disabled',true); // atributo disable -> | attr() -> atributo, pode pegar o valor e modificar | parâmetro true para HTML
-                clearInterval(cronometroID); // clearInterval -> recebe o id para informar quando deve parar de funcionar
-                $('#botao-reiniciar').attr('disabled', false); // habilita o botão reiniciar ao fim do jogo
-                campo.toggleClass('campo-desativado');
-            }
-        }, 1000);
-    });
-}
-
 function inicializaMarcadores() {
     var frase = $('.frase').text();
     campo.on('input', function() {
@@ -67,6 +49,27 @@ function inicializaMarcadores() {
     });
 }
 
+function inicializaCronometro() {
+    // > Contador de tempo
+    var tempoRestante = $('#tempo-digitacao').text();
+    campo.one('focus', function() { // focus -> evento que detecta a entrada no campo para iniciar a digitação | one() -> igual a função on() mas só funciona uma única vez
+        var cronometroID = setInterval(function() { // setInterval -> evento que chama o que for declarado, a cada tempo estabelecido
+            tempoRestante--;
+            $('#tempo-digitacao').text(tempoRestante); 
+            if(tempoRestante < 1) {
+                clearInterval(cronometroID); // clearInterval -> recebe o id para informar quando deve parar de funcionar
+                finalizaJogo();
+            }
+        }, 1000);
+    });
+}
+
+function finalizaJogo() {
+    campo.attr('disabled',true); // atributo disable -> | attr() -> atributo, pode pegar o valor e modificar | parâmetro true para HTML
+    campo.toggleClass('campo-desativado');
+    inserePlacar();
+}
+
 function reiniciaJogo() {
     campo.attr('disabled', false);
     campo.val('');
@@ -81,3 +84,5 @@ function reiniciaJogo() {
     campo.removeClass('borda-vermelha');
     campo.removeClass('borda-verde');
 }
+
+// use href="#top" or href="#" to link to the top of the current page
