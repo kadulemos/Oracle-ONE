@@ -34,8 +34,8 @@ function inicializaContadores() {
 }
 
 function inicializaMarcadores() {
-    var frase = $('.frase').text();
     campo.on('input', function() {
+        var frase = $('.frase').text();
         var digitado = campo.val();
         var comparavel = frase.substr(0, digitado.length); // sustr() -> pega pedaço do conteúdo
 
@@ -51,8 +51,8 @@ function inicializaMarcadores() {
 
 function inicializaCronometro() {
     // > Contador de tempo
-    var tempoRestante = $('#tempo-digitacao').text();
     campo.one('focus', function() { // focus -> evento que detecta a entrada no campo para iniciar a digitação | one() -> igual a função on() mas só funciona uma única vez
+        var tempoRestante = $('#tempo-digitacao').text();
         var cronometroID = setInterval(function() { // setInterval -> evento que chama o que for declarado, a cada tempo estabelecido
             tempoRestante--;
             $('#tempo-digitacao').text(tempoRestante); 
@@ -83,6 +83,11 @@ function reiniciaJogo() {
     campo.toggleClass('campo-desativado'); // habilita / desabilita
     campo.removeClass('borda-vermelha');
     campo.removeClass('borda-verde');
+}
+
+function atualizaTamanhoInicial(tempo) {
+    tempoInicial = tempo;
+    $('#tempo-digitacao').text(tempo);
 }
 
 // use href="#top" or href="#" to link to the top of the current page
