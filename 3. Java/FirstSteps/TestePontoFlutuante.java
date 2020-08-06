@@ -4,7 +4,13 @@ public class TestePontoFlutuante {
 
         System.out.println("O salário é: " + salario);
 
-        double divisao = 5.0 / 2;
+        double divisao = 3 / 2;
         System.out.println(divisao);
+
+        int outraDivisao = 5 / 2;
+        System.out.println(outraDivisao);
+
+        double novaTentativa = 5.0 / 2;
+        System.out.println(novaTentativa);
     }
 }
