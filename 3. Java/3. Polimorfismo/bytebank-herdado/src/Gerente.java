@@ -1,4 +1,4 @@
-// Gerente herda da class Funcionario
+// EXTENDS -> Gerente herda da class Funcionario
 public class Gerente extends Funcionario {
 
     private int senha;
@@ -16,9 +16,12 @@ public class Gerente extends Funcionario {
         this.senha = senha;
     }
 
-    //Cálculo de bonificação do gerente
-    //public double getBonificacao() {
-        //return this.salario;
-    //}
+    // Cálculo de bonificação do gerente -> usando o mesmo método da classe mãe (reescrita)
+    public double getBonificacao() {
+        //super -> significa this para referenciar a classe mãe (superclass)
+        //super.getBonificacao() -> reaproveitando o método definido na classe mãe
+        //super.getSalario() -> pega o método getSalario() da classe mãe, sem precisar mudar a visibilidade de private para protected
+        return super.getBonificacao() + super.getSalario();
+    }
 
 }
